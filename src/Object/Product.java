@@ -1,3 +1,5 @@
+package Object;
+
 public class Product {
     private Long id;
     private String name;
@@ -26,11 +28,11 @@ public class Product {
     }
 
     private void setName(String name) {
-        if(name.isBlank() || name.length() > 20){
-            this.name = "SomeProduct";
-        }else {
-            this.name = name;
-        }
+       if(name.isBlank()){
+           this.name = "SomeName";
+       }else{
+           this.name = name;
+       }
     }
 
     public Double getPrice() {
@@ -38,9 +40,9 @@ public class Product {
     }
 
     private void setPrice(Double price) {
-        if(price == 0 || price < 0) {
-            this.price = 100.0;
-        }else{
+        if(price <= 0 || price == null){
+            this.price = 100D;
+        }else {
             this.price = price;
         }
     }
